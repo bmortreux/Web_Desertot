@@ -1,0 +1,55 @@
+version: "3.1"
+
+services:
+
+  #angular:
+  #  build:
+  #    context: ./frontAngular
+  #    dockerfile: Dockerfile
+  #  volumes: # Volume binding
+  #    - './frontAngular:/usr/src/app'
+  #  ports:
+  #    - "4200:4200" # Port mapping
+  #  command: >
+  #    bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
+  #  networks:
+  #    - back
+
+  spring:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    ports:
+      - 8082:8082
+      - 8001:8001
+    restart: "no"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:hsqldb:hsql:/db/test
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: password
+    networks:
+      - back
+
+  db:
+    image: mitchtalmadge/hsqldb
+    environment:
+      - HSQLDB_TRACE=true
+      - HSQLDB_SILENT=false
+      - HSQLDB_USER=sa
+      - HSQLDB_PASSWORD=password
+      - HSQLDB_DATABASE_HOST=localhost
+      - HSQLDB_DATABASE_ALIAS=test
+    ports:
+      - 9001:9001
+    volumes:
+      - /opt/database
+    networks:
+      - back
+
+networks:
+  back:
+
+volumes:
+  db-data:
