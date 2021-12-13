@@ -1,1 +1,30 @@
-<p>add-company works!</p>
+    <div class="py-5 text-center">
+      <h2>Add company</h2>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Company</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid Name is required.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="turnover" class="form-label">Turnover</label>
+              <input type="text" class="form-control" id="turnover" placeholder="" required>
+              <div class="invalid-feedback">
+                Please enter your turnover.
+              </div>
+            </div>
+          </div>
+          <hr class="my-4">
+          <button class="btn btn-outline-dark btn-lg w-100" type="submit">Add</button>
+        </form>
+      </div>
+    </div>

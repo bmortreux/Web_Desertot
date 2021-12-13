@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AddCompanyComponent } from './add-company/add-company.component';
 import { AnnuaireComponent } from './annuaire/annuaire.component';
+import { AddPersonsComponent } from './add-persons/add-persons.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { AnnuaireComponent } from './annuaire/annuaire.component';
     HomePageComponent,
     AddCompanyComponent,
     AnnuaireComponent,
+    AddPersonsComponent,
   ],
   imports: [
     BrowserModule,
