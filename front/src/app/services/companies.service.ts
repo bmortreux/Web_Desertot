@@ -14,4 +14,8 @@ export class CompaniesService {
   public getCompaniesList(): Observable<companies[]> {
     return this.http.get<companies[]>(`${environment.url}/companies`);
   }
+
+  public createCompany(companies: companies): Observable<companies> {
+    return this.http.post<companies>(`${environment.url}/addCompany`, companies);
+  }
 }
