@@ -30,6 +30,6 @@ public class CompanyController {
     /*Création de notre company avec au préalable 0 personnes dans l'entreprise, nous devons les ajouter par la suite*/
     @PostMapping("addCompany")
     public void createCompany(@Validated @RequestBody CreateCompany newCompany) throws IOException {
-        companyRepository.save(Company.builder().name(newCompany.getName()).turnover(newCompany.getTurnover()).listPerson(newCompany.getListPerson()).build());
+        companyRepository.save(Company.builder().name(newCompany.getName()).city(newCompany.getCity()).phone(newCompany.getPhone()).turnover(newCompany.getTurnover()).listPerson(newCompany.getListPerson()).build());
     }
 }

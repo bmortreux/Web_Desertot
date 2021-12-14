@@ -20,7 +20,7 @@
       <td>{{person.firstname}}</td>
       <td>{{person.phone}}</td>
       <td>{{person.city}}</td>
-      <td>{{person.company.name}}</td>
+      <td>{{person.company.name}} ({{person.company.city}})</td>
       <button (click)="deletePerson(person.person_id)" class="details"  style="float: inline-end;">
         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor"
              xmlns="http://www.w3.org/2000/svg">

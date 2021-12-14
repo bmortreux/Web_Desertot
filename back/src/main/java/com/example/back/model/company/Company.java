@@ -28,6 +28,12 @@ public class Company {
     @NotNull(message = "Name Required")
     private String name;
 
+    @NotNull(message = "City Required")
+    private String city;
+
+    @NotNull(message = "Phone Required")
+    private String phone;
+
     @NotNull(message = "Turnover Required")
     private int turnover;
 

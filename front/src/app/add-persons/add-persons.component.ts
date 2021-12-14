@@ -47,7 +47,9 @@ export class AddPersonsComponent implements OnInit {
     texte = liste.options[liste.selectedIndex].text;
 
     this.companies.forEach(function(companie) {
-      if (companie.name == texte) {
+      var temp:String;
+      temp = companie.name + " (" + companie.city + ")";
+      if (temp == texte) {
         // @ts-ignore
         id = companie.company_id;
       }
