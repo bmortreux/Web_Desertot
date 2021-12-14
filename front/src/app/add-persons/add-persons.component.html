@@ -5,49 +5,51 @@
 <div class="row g-5">
   <div class="col-md-7 col-lg-8">
     <h4 class="mb-3">Person</h4>
-    <form class="needs-validation" novalidate>
+    <form class="needs-validation" novalidate [formGroup]="createPerson" (ngSubmit)="onSubmit(createPerson.value)">
       <div class="row g-3">
         <div class="col-sm-6">
           <label for="firstName" class="form-label">First name</label>
-          <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-          <div class="invalid-feedback">
-            Valid first name is required.
-          </div>
+          <input class="form-control"
+                 id="firstName"
+                 formControlName="firstName"
+                 type="text"
+                 placeholder="FirstName">
         </div>
 
         <div class="col-sm-6">
           <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="" value="" required>
-          <div class="invalid-feedback">
-            Valid name is required.
-          </div>
+          <input class="form-control"
+                 id="name"
+                 formControlName="name"
+                 type="text"
+                 placeholder="Name">
         </div>
 
         <div class="col-12">
           <label for="city" class="form-label">City</label>
-          <input type="text" class="form-control" id="city" placeholder="" required>
-          <div class="invalid-feedback">
-            Please enter your city.
-          </div>
+          <input class="form-control"
+                 id="city"
+                 formControlName="city"
+                 type="text"
+                 placeholder="City">
         </div>
 
         <div class="col-12">
           <label for="phone" class="form-label">Phone</label>
-          <input type="text" class="form-control" id="phone" placeholder="">
-          <div class="invalid-feedback">
-            Please enter your phone.
-          </div>
+          <input class="form-control"
+                 id="phone"
+                 formControlName="phone"
+                 type="text"
+                 placeholder="Phone">
         </div>
 
         <div class="col-12">
-          <label for="country" class="form-label">Country</label>
-          <select class="form-select" id="country" required>
+          <label for="company" class="form-label">Company</label>
+          <select  class="form-select"
+                   id="company">
             <option value="">Choose...</option>
-            <option>United States</option>
+            <option *ngFor="let companie of companies">{{companie.name}}</option>
           </select>
-          <div class="invalid-feedback">
-            Please select a valid country.
-          </div>
         </div>
       </div>
       <br/>

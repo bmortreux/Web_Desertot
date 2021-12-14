@@ -17,4 +17,8 @@ export class PersonnesService {
     return this.http.get<personnes[]>(`${environment.url}/persons`);
 
   }
+
+  public createPerson(personnes: personnes, id: number): Observable<personnes> {
+    return this.http.post<personnes>(`${environment.url}/${id}/addPerson`, personnes);
+  }
 }
