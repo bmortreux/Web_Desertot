@@ -21,4 +21,8 @@ export class PersonnesService {
   public createPerson(personnes: personnes, id: number): Observable<personnes> {
     return this.http.post<personnes>(`${environment.url}/${id}/addPerson`, personnes);
   }
+
+  public deletePerson(id: number): Observable<any> {
+    return this.http.delete(`${environment.url}/person/${id}`);
+  }
 }

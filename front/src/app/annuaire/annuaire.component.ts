@@ -24,4 +24,9 @@ export class AnnuaireComponent implements OnInit {
     }))
   }
 
+  deletePerson(id: number): void {
+    this.personsService.deletePerson(id).subscribe(personResponse => {
+      this.ngOnInit();
+    });
+  }
 }
