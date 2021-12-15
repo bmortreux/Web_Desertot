@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+// @ts-ignore
 import {companies} from "../models/companies";
 // @ts-ignore
 import {person} from "../models/personnes";

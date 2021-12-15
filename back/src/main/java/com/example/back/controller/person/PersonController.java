@@ -50,7 +50,7 @@ public class PersonController {
 
     /*Supprimer une personne en fonction de son ID*/
     @DeleteMapping("person/{id}")
-    public ResponseEntity<?> deleteIllness(@PathVariable("id") Integer idPerson) {
+    public ResponseEntity<?> deletePerson(@PathVariable("id") Integer idPerson) {
         if (!personRepository.existsById(idPerson)) {
             throw new ResourceNotFoundException("Aucune personne n'a été trouvé avec comme id " + idPerson);
         }

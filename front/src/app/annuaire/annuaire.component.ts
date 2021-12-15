@@ -4,7 +4,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {PersonnesService} from "../services/personnes.service";
 // @ts-ignore
 import {personnes} from '../models/personnes';
-import { companies } from '../models/companies';
+// @ts-ignore
+import {companies} from '../models/companies';
 import {CompaniesService} from "../services/companies.service";
 
 @Component({
@@ -38,6 +39,12 @@ export class AnnuaireComponent implements OnInit {
 
   deletePerson(id: number): void {
     this.personsService.deletePerson(id).subscribe(personResponse => {
+      this.ngOnInit();
+    });
+  }
+
+  deleteCompany(id: number): void {
+    this.companiesService.deleteCompany(id).subscribe(personResponse => {
       this.ngOnInit();
     });
   }

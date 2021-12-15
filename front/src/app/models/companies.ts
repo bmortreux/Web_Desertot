@@ -1,7 +1,7 @@
 // @ts-ignore
 import {personnes} from './personnes';
 
-export interface companies {
+export interface Companies {
   company_id?: number;
   name: String;
   city: String;
