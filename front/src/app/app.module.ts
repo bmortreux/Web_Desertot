@@ -8,6 +8,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AddCompanyComponent } from './add-company/add-company.component';
 import { AnnuaireComponent } from './annuaire/annuaire.component';
 import { AddPersonsComponent } from './add-persons/add-persons.component';
+import { ModifyPersonComponent } from './modify-person/modify-person.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AddPersonsComponent } from './add-persons/add-persons.component';
     AddCompanyComponent,
     AnnuaireComponent,
     AddPersonsComponent,
+    ModifyPersonComponent,
   ],
   imports: [
     BrowserModule,

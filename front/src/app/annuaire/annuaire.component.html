@@ -21,7 +21,7 @@
       <td>{{person.phone}}</td>
       <td>{{person.city}}</td>
       <td>{{person.company.name}} ({{person.company.city}})</td>
-      <a [routerLink]="['']"  class="details"  style="float: inline-end;">
+      <a [routerLink]="['modifyPerson/',person.person_id]"  class="details"  style="float: inline-end;">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
                xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
