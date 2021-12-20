@@ -1,10 +1,13 @@
 # This defines our starting point
 FROM node:16.13
 
-RUN mkdir /usr/src/app
+RUN mkdir /usr/src/app && \
+     npm install -g @angular/cli
 
 WORKDIR /usr/src/app
 
-RUN npm install -g @angular/cli
-
 COPY . .
+
+RUN npm install
+
+CMD ng serve --host 0.0.0.0 --port 4200
