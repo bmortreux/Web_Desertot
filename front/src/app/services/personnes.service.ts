@@ -18,6 +18,10 @@ export class PersonnesService {
 
   }
 
+  public getPerson(id: number): Observable<personnes> {
+    return this.http.get<personnes>(`${environment.url}/person/${id}`)
+  }
+
   public createPerson(personnes: personnes, id: number): Observable<personnes> {
     return this.http.post<personnes>(`${environment.url}/${id}/addPerson`, personnes);
   }
@@ -25,4 +29,9 @@ export class PersonnesService {
   public deletePerson(id: number): Observable<any> {
     return this.http.delete(`${environment.url}/person/${id}`);
   }
+
+  public modifyPerson(personnes: personnes, id: number): Observable<personnes> {
+    return this.http.put<personnes>(`${environment.url}/person/${id}`, personnes);
+  }
+
 }

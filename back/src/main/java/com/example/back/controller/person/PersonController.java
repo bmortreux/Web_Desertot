@@ -30,6 +30,9 @@ public class PersonController {
         return personRepository.findAll();
     }
 
+    @GetMapping("person/{id}")
+    public Optional<Person> getPerson(@PathVariable("id") Integer id) { return personRepository.findById(id); }
+
     @GetMapping("persons/{name}")
     public List<Person> getPersons(@PathVariable("name") String name) {
         return personRepository.findByName(name);
