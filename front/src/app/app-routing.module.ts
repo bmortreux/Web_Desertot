@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'addCompany', component: AddCompanyComponent},
   {path: 'addPersons', component: AddPersonsComponent},
-  {path: 'modifyPerson/:id', component: ModifyPersonComponent},
+  {path: 'annuairePersons/modifyPerson/:id', component: ModifyPersonComponent},
   {path: 'annuairePersons', component: AnnuaireComponent},
   {path: 'annuaireCompanies', component: AnnuaireCompaniesComponent}
 ];
