@@ -9,6 +9,7 @@ import { AddCompanyComponent } from './add-company/add-company.component';
 import { AnnuaireComponent } from './annuaire/annuaire.component';
 import { AddPersonsComponent } from './add-persons/add-persons.component';
 import { ModifyPersonComponent } from './modify-person/modify-person.component';
+import { AnnuaireCompaniesComponent } from './annuaire-companies/annuaire-companies.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ModifyPersonComponent } from './modify-person/modify-person.component';
     AnnuaireComponent,
     AddPersonsComponent,
     ModifyPersonComponent,
+    AnnuaireCompaniesComponent,
   ],
   imports: [
     BrowserModule,

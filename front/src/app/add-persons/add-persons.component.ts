@@ -68,6 +68,6 @@ export class AddPersonsComponent implements OnInit {
       this.createEvent.emit(personResponse);
       this.createPerson.reset();
     });
-    this.router.navigate(['/']);
+    this.router.navigate(['annuairePersons']);
   }
 }

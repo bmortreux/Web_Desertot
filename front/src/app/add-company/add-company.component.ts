@@ -43,6 +43,6 @@ export class AddCompanyComponent implements OnInit {
          this.createEvent.emit(companyResponse);
          this.createCompany.reset();
     });
-    this.router.navigate(['/']);
+    this.router.navigate(['annuaireCompanies']);
   }
 }
