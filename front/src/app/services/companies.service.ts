@@ -23,4 +23,12 @@ export class CompaniesService {
   public deleteCompany(id: number): Observable<any> {
     return this.http.delete(`${environment.url}/company/${id}`);
   }
+
+  public getCompany(id: number): Observable<companies> {
+    return this.http.get<companies>(`${environment.url}/company/${id}`)
+  }
+
+  public modifyCompany(companies: companies, id: number): Observable<companies> {
+    return this.http.put<companies>(`${environment.url}/company/${id}`, companies);
+  }
 }

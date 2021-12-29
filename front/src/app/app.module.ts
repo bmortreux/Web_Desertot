@@ -10,6 +10,7 @@ import { AnnuaireComponent } from './annuaire/annuaire.component';
 import { AddPersonsComponent } from './add-persons/add-persons.component';
 import { ModifyPersonComponent } from './modify-person/modify-person.component';
 import { AnnuaireCompaniesComponent } from './annuaire-companies/annuaire-companies.component';
+import { ModifyCompanyComponent } from './modify-company/modify-company.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AnnuaireCompaniesComponent } from './annuaire-companies/annuaire-compan
     AddPersonsComponent,
     ModifyPersonComponent,
     AnnuaireCompaniesComponent,
+    ModifyCompanyComponent,
   ],
   imports: [
     BrowserModule,

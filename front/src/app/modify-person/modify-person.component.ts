@@ -80,7 +80,6 @@ export class ModifyPersonComponent implements OnInit {
       nameCompany: temp[0],
     }
 
-    console.log(person)
     // @ts-ignore
     this.personService.modifyPerson(person, this.id).subscribe((personResponse => {
       this.createEvent.emit(personResponse);
