@@ -34,4 +34,8 @@ export class PersonnesService {
     return this.http.put<personnes>(`${environment.url}/person/${id}`, personnes);
   }
 
+  public getPersonName(name: string): Observable<personnes> {
+    return this.http.get<personnes>(`${environment.url}/persons/${name}`)
+  }
+
 }

@@ -9,6 +9,7 @@ import {ModifyPersonComponent} from "./modify-person/modify-person.component";
 import {AnnuaireComponent} from "./annuaire/annuaire.component";
 import {AnnuaireCompaniesComponent} from "./annuaire-companies/annuaire-companies.component";
 import {ModifyCompanyComponent} from "./modify-company/modify-company.component";
+import {SearchPersonComponent} from "./search-person/search-person.component";
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'annuairePersons/modifyPerson/:id', component: ModifyPersonComponent},
   {path: 'annuairePersons', component: AnnuaireComponent},
   {path: 'annuaireCompanies', component: AnnuaireCompaniesComponent},
-  {path: 'annuaireCompanies/modifyCompany/:id', component: ModifyCompanyComponent}
+  {path: 'annuaireCompanies/modifyCompany/:id', component: ModifyCompanyComponent},
+  {path: 'search/:name', component: SearchPersonComponent}
 ];
 
 // @ts-ignore

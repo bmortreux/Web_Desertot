@@ -11,6 +11,7 @@ import { AddPersonsComponent } from './add-persons/add-persons.component';
 import { ModifyPersonComponent } from './modify-person/modify-person.component';
 import { AnnuaireCompaniesComponent } from './annuaire-companies/annuaire-companies.component';
 import { ModifyCompanyComponent } from './modify-company/modify-company.component';
+import { SearchPersonComponent } from './search-person/search-person.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ModifyCompanyComponent } from './modify-company/modify-company.componen
     ModifyPersonComponent,
     AnnuaireCompaniesComponent,
     ModifyCompanyComponent,
+    SearchPersonComponent,
   ],
   imports: [
     BrowserModule,

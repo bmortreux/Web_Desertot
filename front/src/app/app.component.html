@@ -10,11 +10,11 @@
 
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="">Company Directory</a>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-dark btn-lg w-30 text-white-50" type="submit">Recherche</button>
+  <form class="w-100 needs-validation" [formGroup]="search" (ngSubmit)="onSubmit(search.value)">
+  <input id="searchPerson" class="form-control-dark w-10" type="text" placeholder="Search"
+          aria-label="Search" formControlName="searchPerson">
+    <button class="btn btn-outline-dark btn-lg w-30 text-white-50" type="submit">Recherche</button>
+  </form>
 </header>
 
 <div class="container-fluid">
