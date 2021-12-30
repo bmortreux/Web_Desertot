@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CreatePerson {
 
+    private String profession;
     private String name;
     private String firstname;
     private String phone;

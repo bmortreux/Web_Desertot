@@ -12,6 +12,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UpdatePerson {
 
+    //private String profession;
+
     private String name;
 
     private String firstname;

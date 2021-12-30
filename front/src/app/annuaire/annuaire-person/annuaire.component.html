@@ -6,6 +6,7 @@
     <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Avatar</th>
       <th scope="col">Name</th>
       <th scope="col">Firstname</th>
       <th scope="col">Phone</th>
@@ -16,6 +17,7 @@
     <tbody *ngFor="let person of persons">
     <tr>
       <td>{{person.person_id}}</td>
+      <td><img src="assets/image/metiers/{{person.profession}}.png"/></td>
       <td>{{person.name}}</td>
       <td>{{person.firstname}}</td>
       <td>{{person.phone}}</td>

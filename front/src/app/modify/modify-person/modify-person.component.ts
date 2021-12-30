@@ -2,11 +2,11 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup} from "@angular/forms";
 // @ts-ignore
-import {person} from "../models/personnes";
-import {PersonnesService} from "../services/personnes.service";
+import {person} from "../../models/personnes";
+import {PersonnesService} from "../../services/personnes.service";
 // @ts-ignore
-import {companies} from "../models/companies";
-import {CompaniesService} from "../services/companies.service";
+import {companies} from "../../models/companies";
+import {CompaniesService} from "../../services/companies.service";
 
 @Component({
   selector: 'app-modify-person',
@@ -72,12 +72,20 @@ export class ModifyPersonComponent implements OnInit {
     }
     var temp: String[];
     temp = texte.split(" ")
+
+    //probleme d'affichage lors de la modification de l'emploi
+   /* var p = document.getElementById("profession");
+    // @ts-ignore
+    var prof = p.options[p.selectedIndex].text;
+    console.log(prof);*/
+
     const person: person = {
       name: personData.name,
       firstname: personData.firstname,
       phone: personData.phone,
       city: personData.city,
       nameCompany: temp[0],
+      //profession: prof,
     }
 
     // @ts-ignore

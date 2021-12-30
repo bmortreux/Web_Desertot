@@ -1,12 +1,12 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 // @ts-ignore
-import {companies} from "../models/companies";
+import {companies} from "../../models/companies";
 // @ts-ignore
-import {person} from "../models/personnes";
+import {person} from "../../models/personnes";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {CompaniesService} from "../services/companies.service";
-import {PersonnesService} from "../services/personnes.service";
+import {CompaniesService} from "../../services/companies.service";
+import {PersonnesService} from "../../services/personnes.service";
 
 @Component({
   selector: 'app-add-persons',
@@ -25,6 +25,7 @@ export class AddPersonsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private companiesService: CompaniesService,
               private router: Router, private personsService: PersonnesService) {
     this.createPerson = this.formBuilder.group({
+      profession: '',
       name: '',
       firstName: '',
       phone: '',
@@ -56,7 +57,12 @@ export class AddPersonsComponent implements OnInit {
       }
     })
 
+    var p = document.getElementById("profession");
+    // @ts-ignore
+    var prof = p.options[p.selectedIndex].text;
+
     const person: person = {
+      profession: prof,
       name: personData.name,
       firstname: personData.firstName,
       phone: personData.phone,

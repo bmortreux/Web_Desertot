@@ -1,9 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {CompaniesService} from "../services/companies.service";
+import {CompaniesService} from "../../services/companies.service";
 // @ts-ignore
-import {companies} from "../models/companies";
+import {companies} from "../../models/companies";
 
 @Component({
   selector: 'app-add-company',

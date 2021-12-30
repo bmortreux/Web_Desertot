@@ -48,7 +48,7 @@ public class PersonController {
             company = companyOptional.get();
         }
         personRepository.save(Person.builder().name(newPerson.getName()).city(newPerson.getCity()).phone(newPerson.getPhone())
-                .firstname(newPerson.getFirstname()).company(company).build());
+                .firstname(newPerson.getFirstname()).company(company).profession(newPerson.getProfession()).build());
     }
 
     /*Supprimer une personne en fonction de son ID*/
@@ -83,7 +83,7 @@ public class PersonController {
         return personRepository.findById(idPerson).map(person -> {
             person.setCity(updatePerson.getCity());person.setFirstname(updatePerson.getFirstname());
             person.setName(updatePerson.getName());person.setPhone(updatePerson.getPhone());
-            person.setCompany(temp);
+            person.setCompany(temp);/*person.setProfession(updatePerson.getProfession());*/
             return personRepository.save(person);
         }).orElse(null);
     }

@@ -1,9 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 // @ts-ignore
-import {companies} from "../models/companies";
+import {companies} from "../../models/companies";
 import {ActivatedRoute, Router} from "@angular/router";
-import {CompaniesService} from "../services/companies.service";
+import {CompaniesService} from "../../services/companies.service";
 
 
 @Component({

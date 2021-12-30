@@ -24,6 +24,8 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int person_id;
 
+    private String profession;
+
     @NotNull(message = "Name Required")
     private String name;
 

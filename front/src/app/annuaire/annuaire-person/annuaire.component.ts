@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import {PersonnesService} from "../services/personnes.service";
+import {PersonnesService} from "../../services/personnes.service";
 // @ts-ignore
-import {personnes} from '../models/personnes';
+import {personnes} from '../../models/personnes';
 
 @Component({
   selector: 'app-annuaire',
