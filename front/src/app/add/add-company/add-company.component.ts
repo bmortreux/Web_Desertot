@@ -2,8 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {CompaniesService} from "../../services/companies.service";
-// @ts-ignore
-import {companies} from "../../models/companies";
+import {Companies} from "../../models/companies/companies.model";
 
 @Component({
   selector: 'app-add-company',
@@ -12,10 +11,9 @@ import {companies} from "../../models/companies";
 })
 export class AddCompanyComponent implements OnInit {
 
-  // @ts-ignore
   public createCompany: FormGroup;
 
-  @Output() createEvent = new EventEmitter<companies>();
+  @Output() createEvent = new EventEmitter<Companies>();
 
   constructor(private activatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private companiesService: CompaniesService,
               private router: Router) {
@@ -32,7 +30,7 @@ export class AddCompanyComponent implements OnInit {
   }
 
   onSubmit(companyData: any) {
-    const company: companies = {
+    const company: Companies = {
       name: companyData.name,
       city: companyData.city,
       phone: companyData.phone,

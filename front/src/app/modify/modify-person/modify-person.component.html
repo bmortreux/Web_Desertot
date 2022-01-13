@@ -65,7 +65,7 @@
           <label for="company" class="form-label">Company</label>
           <select  class="form-select"
                    id="company">
-            <option value="">{{person.company.name}} ({{person.company.city}})</option>
+            <option *ngIf="person.company != null" value="">{{person.company.name}} ({{person.company.city}})</option>
             <option *ngFor="let companie of companies">{{companie.name}} ({{companie.city}})</option>
           </select>
         </div>

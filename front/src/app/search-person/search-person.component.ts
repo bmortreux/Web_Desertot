@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// @ts-ignore
-import {personnes} from "../models/personnes";
+import {Personnes} from "../models/personnes/personnes.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder} from "@angular/forms";
 import {PersonnesService} from "../services/personnes.service";
@@ -12,7 +11,7 @@ import {PersonnesService} from "../services/personnes.service";
 })
 export class SearchPersonComponent implements OnInit {
 
-  public persons: personnes[];
+  public persons: Personnes[];
 
   public name: string | null
 
@@ -26,14 +25,14 @@ export class SearchPersonComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(routeParams => {
       this.name = routeParams['name'];
-      // @ts-ignore
       this.personsService.getPersonName(this.name).subscribe((personResponse => {
+        // @ts-ignore
         this.persons = personResponse;
       }));
     })
   }
 
-  deletePerson(id: number): void {
+  deletePerson(id?: number) {
     this.personsService.deletePerson(id).subscribe(personResponse => {
       this.ngOnInit();
     });

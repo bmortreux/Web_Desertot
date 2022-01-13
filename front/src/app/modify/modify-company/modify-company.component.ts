@@ -1,7 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-// @ts-ignore
-import {companies} from "../../models/companies";
+import {Companies} from "../../models/companies/companies.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CompaniesService} from "../../services/companies.service";
 
@@ -15,11 +14,11 @@ export class ModifyCompanyComponent implements OnInit {
 
   public id: string | null;
 
-  public company: companies;
+  public company: Companies;
 
   public modifyCompany: FormGroup;
 
-  @Output() createEvent = new EventEmitter<companies>();
+  @Output() createEvent = new EventEmitter<Companies>();
 
   constructor(private activatedRoute: ActivatedRoute, private formBuilder: FormBuilder,
               private router: Router, private companiesService: CompaniesService) {
@@ -31,7 +30,7 @@ export class ModifyCompanyComponent implements OnInit {
       phone: '',
       turnover: 0,
     })
-    this.company = {} as companies;
+    this.company = {} as Companies;
   }
 
   ngOnInit(): void {
@@ -55,7 +54,7 @@ export class ModifyCompanyComponent implements OnInit {
       companyData.turnover = this.company.turnover;
     }
 
-    const company: companies = {
+    const company: Companies = {
       name: companyData.name,
       phone: companyData.phone,
       city: companyData.city,

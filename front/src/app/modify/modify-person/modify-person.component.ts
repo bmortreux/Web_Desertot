@@ -1,11 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup} from "@angular/forms";
-// @ts-ignore
-import {person} from "../../models/personnes";
+import {Personnes} from "../../models/personnes/personnes.model";
 import {PersonnesService} from "../../services/personnes.service";
-// @ts-ignore
-import {companies} from "../../models/companies";
+import {Companies} from "../../models/companies/companies.model";
 import {CompaniesService} from "../../services/companies.service";
 
 @Component({
@@ -17,14 +15,13 @@ export class ModifyPersonComponent implements OnInit {
 
   public id: string | null;
 
-  public person: person;
+  public person: Personnes;
 
   public modifyPerson: FormGroup;
 
-  // @ts-ignore
-  public companies: companies[];
+  public companies: Companies[] | undefined;
 
-  @Output() createEvent = new EventEmitter<person>();
+  @Output() createEvent = new EventEmitter<Personnes>();
 
   constructor(private activatedRoute: ActivatedRoute, private personService: PersonnesService, private formBuilder: FormBuilder,
               private router: Router, private companiesService: CompaniesService) {
@@ -37,7 +34,7 @@ export class ModifyPersonComponent implements OnInit {
       city: '',
       nameCompany: ''
     })
-    this.person = {} as person;
+    this.person = {} as Personnes;
   }
 
   ngOnInit(): void {
@@ -79,16 +76,17 @@ export class ModifyPersonComponent implements OnInit {
     var prof = p.options[p.selectedIndex].text;
     console.log(prof);*/
 
-    const person: person = {
+    const person: Personnes = {
+      profession: undefined,
       name: personData.name,
       firstname: personData.firstname,
       phone: personData.phone,
       city: personData.city,
       nameCompany: temp[0],
+      company: undefined,
       //profession: prof,
     }
 
-    // @ts-ignore
     this.personService.modifyPerson(person, this.id).subscribe((personResponse => {
       this.createEvent.emit(personResponse);
       this.modifyPerson.reset();

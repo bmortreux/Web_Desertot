@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-// @ts-ignore
-import {companies} from '../../models/companies';
+import {Companies} from '../../models/companies/companies.model';
 import {CompaniesService} from "../../services/companies.service";
 
 @Component({
@@ -12,11 +11,9 @@ import {CompaniesService} from "../../services/companies.service";
 })
 export class AnnuaireCompaniesComponent implements OnInit {
 
-  // @ts-ignore
-  public companies: companies[];
+  public companies: Companies[] = [];
 
   constructor(private activatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private companiesService: CompaniesService, private router: Router) {
-    this.companies= [];
     //on a besoin de faire un this.ngOnInit() car après valider le form et revenir avec le .navigate il faut maj le component
     this.ngOnInit();
   }
@@ -27,7 +24,7 @@ export class AnnuaireCompaniesComponent implements OnInit {
     }));
   }
 
-  deleteCompany(id: number): void {
+  deleteCompany(id?: number){
     this.companiesService.deleteCompany(id).subscribe(personResponse => {
       this.ngOnInit();
     });

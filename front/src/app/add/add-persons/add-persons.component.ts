@@ -1,8 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-// @ts-ignore
-import {companies} from "../../models/companies";
-// @ts-ignore
-import {person} from "../../models/personnes";
+import {Companies} from "../../models/companies/companies.model";
+import {Personnes} from "../../models/personnes/personnes.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {CompaniesService} from "../../services/companies.service";
@@ -15,12 +13,11 @@ import {PersonnesService} from "../../services/personnes.service";
 })
 export class AddPersonsComponent implements OnInit {
 
-  // @ts-ignore
-  public companies: companies[];
+  public companies: Companies[] | undefined;
 
   public createPerson: FormGroup;
 
-  @Output() createEvent = new EventEmitter<person>();
+  @Output() createEvent = new EventEmitter<Personnes>();
 
   constructor(private activatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private companiesService: CompaniesService,
               private router: Router, private personsService: PersonnesService) {
@@ -48,6 +45,7 @@ export class AddPersonsComponent implements OnInit {
     // @ts-ignore
     texte = liste.options[liste.selectedIndex].text;
 
+    // @ts-ignore
     this.companies.forEach(function(companie) {
       var temp:String;
       temp = companie.name + " (" + companie.city + ")";
@@ -61,12 +59,14 @@ export class AddPersonsComponent implements OnInit {
     // @ts-ignore
     var prof = p.options[p.selectedIndex].text;
 
-    const person: person = {
+    const person: Personnes = {
       profession: prof,
       name: personData.name,
       firstname: personData.firstName,
       phone: personData.phone,
       city: personData.city,
+      company: new Companies(),
+      nameCompany:undefined,
     }
 
     // @ts-ignore

@@ -1,6 +1,4 @@
-// @ts-ignore
 import { NgModule } from '@angular/core';
-// @ts-ignore
 import { RouterModule, Routes } from '@angular/router';
 import {HomePageComponent} from "./home-page/home-page.component";
 import {AddCompanyComponent} from "./add/add-company/add-company.component";
@@ -19,10 +17,10 @@ const routes: Routes = [
   {path: 'annuairePersons', component: AnnuaireComponent},
   {path: 'annuaireCompanies', component: AnnuaireCompaniesComponent},
   {path: 'annuaireCompanies/modifyCompany/:id', component: ModifyCompanyComponent},
-  {path: 'search/:name', component: SearchPersonComponent}
+  {path: 'search/:name', component: SearchPersonComponent},
+  {path: 'search/:name/modifyCompany/:id', component: ModifyCompanyComponent},
 ];
 
-// @ts-ignore
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
