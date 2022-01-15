@@ -73,7 +73,7 @@ export class AddPersonsComponent implements OnInit {
     this.personsService.createPerson(person,id).subscribe((personResponse) => {
       this.createEvent.emit(personResponse);
       this.createPerson.reset();
+      this.router.navigate(['annuairePersons']);
     });
-    this.router.navigate(['annuairePersons']);
   }
 }

@@ -6,8 +6,6 @@ services:
     build:
       context: ./front
       dockerfile: Dockerfile
-    volumes: # Volume binding
-      - './front:/usr/src/app'
     ports:
       - "4200:4200" # Port mapping
     networks:

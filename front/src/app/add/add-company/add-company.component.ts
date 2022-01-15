@@ -40,7 +40,7 @@ export class AddCompanyComponent implements OnInit {
     this.companiesService.createCompany(company).subscribe((companyResponse) => {
          this.createEvent.emit(companyResponse);
          this.createCompany.reset();
+        this.router.navigate(['annuaireCompanies']);
     });
-    this.router.navigate(['annuaireCompanies']);
   }
 }

@@ -16,8 +16,7 @@ export class AnnuaireComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private personsService : PersonnesService,
               private router: Router) {
-    //on a besoin de faire un this.ngOnInit() car après valider le form et revenir avec le .navigate il faut maj le component
-    this.ngOnInit();
+
   }
 
   ngOnInit(): void {
