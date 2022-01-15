@@ -21,10 +21,6 @@ services:
     restart: "no"
     depends_on:
       - db
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:hsqldb:hsql:/db/test
-      SPRING_DATASOURCE_USERNAME: sa
-      SPRING_DATASOURCE_PASSWORD: password
     networks:
       - back
 

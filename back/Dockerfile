@@ -1,6 +1,10 @@
 #### image d'un jdk8 sous alpine
 FROM openjdk:8-jdk-alpine as build
 
+ENV SPRING_DATASOURCE_URL="jdbc:hsqldb:hsql:/db/test" \
+SPRING_DATASOURCE_USERNAME="sa" \
+SPRING_DATASOURCE_PASSWORD="password"
+
 # Working directory au sein de l'image
 WORKDIR /app
 
