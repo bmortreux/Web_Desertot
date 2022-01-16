@@ -34,17 +34,17 @@ A partir de la CMD, il faut entrer la commande suivante :
 docker exec -ti web_desertot_kafka_1 /bin/sh
 ```
 Nous arrivons sur la console Shell Unix, il faudra ensuite entrer
-```
+```sh
 kafka-console-producer --broker-list kafka:9092 --topic annuaire
 ```
 La console kafka sera ouverte et c'est ici que nous pourrons taper nos données sous format json afin de les sauvegarder dans la base de données.
 Par exemple nous pouvons taper : 
-```
+```json
 {"name": "Desertot", "firstname": "Mikael", "phone": "+336010203", "city": "Lille", "profession": "PDG"}
 ```
 ### Format json
 Le format json est de la forme :
-```
+```json
 {"name": "", "firstname": "", "phone": "", "city": "", "profession": ""}
 ```
 Si nous souhaitons par exemple transférer les données d'une ancienne base de données vers la nouvelle nous n'allons pas taper toutes les lignes de commande à la main c'est pour cela que nous pouvons extraire les données de l'ancienne vers un fichier sous format .json et l'appeler directement afin de transférer toutes les données
