@@ -27,6 +27,26 @@ Si on ne souhaite pas lancer le back avec Docker
 ```bash
 mvn spring-boot:run
 ```
+## Kafka
+### Accéder
+A partir de la CMD, il faut entrer la commande suivante :
+```bash
+docker exec -ti web_desertot_kafka_1 /bin/sh
+```
+Nous arrivons sur la console Shell Unix, il faudra ensuite entrer
+```
+kafka-console-producer --broker-list kafka:9092 --topic annuaire
+```
+La console kafka sera ouverte et c'est ici que nous pourrons taper nos données sous format json afin de les sauvegarder dans la base de données.
+Par exemple nous pouvons taper : 
+```
+{"name": "Desertot", "firstname": "Mikael", "phone": "+336010203", "city": "Lille", "profession": "PDG"}
+```
+### Format json
+Le format json est de la forme :
+```
+{"name": "", "firstname": "", "phone": "", "city": "", "profession": ""}
+```
 ## Récupération du dépôt github
 ```bash
 git clone https://github.com/bmortreux/Web_Desertot.git
