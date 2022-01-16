@@ -10,7 +10,7 @@ Développement d'une application type annuaire afin de gérer des personnes ains
 - Intellij
 - WebStorm
 - Git
-- Postman (Importer le fichier Postman se trouvant dans les ressources du back)
+- Postman (Importer le fichier Postman se trouvant dans les ressources du back afin de voir toutes les requêtes du site web)
 - Windows PowerShell (pour lancer les commandes)
 ## Installation
 ### Global
