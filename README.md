@@ -47,6 +47,7 @@ Le format json est de la forme :
 ```
 {"name": "", "firstname": "", "phone": "", "city": "", "profession": ""}
 ```
+Si nous souhaitons par exemple transférer les données d'une ancienne base de données vers la nouvelle nous n'allons pas taper toutes les lignes de commande à la main c'est pour cela que nous pouvons extraire les données de l'ancienne vers un fichier sous format .json et l'appeler directement afin de transférer toutes les données
 ## Récupération du dépôt github
 ```bash
 git clone https://github.com/bmortreux/Web_Desertot.git
