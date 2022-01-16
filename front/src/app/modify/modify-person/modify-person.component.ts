@@ -90,7 +90,7 @@ export class ModifyPersonComponent implements OnInit {
     this.personService.modifyPerson(person, this.id).subscribe((personResponse => {
       this.createEvent.emit(personResponse);
       this.modifyPerson.reset();
+      this.router.navigate(['annuairePersons']);
     }))
-    this.router.navigate(['annuairePersons']);
   }
 }

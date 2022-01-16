@@ -65,7 +65,7 @@ export class ModifyCompanyComponent implements OnInit {
     this.companiesService.modifyCompany(company, this.id).subscribe((companyResponse => {
       this.createEvent.emit(companyResponse);
       this.modifyCompany.reset();
+      this.router.navigate(['annuaireCompanies']);
     }))
-    this.router.navigate(['annuaireCompanies']);
   }
 }

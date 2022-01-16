@@ -1,9 +1,9 @@
 #### image d'un jdk8 sous alpine
 FROM openjdk:8-jdk-alpine as build
 
-ENV SPRING_DATASOURCE_URL="jdbc:hsqldb:hsql:/db/test" \
-SPRING_DATASOURCE_USERNAME="sa" \
-SPRING_DATASOURCE_PASSWORD="password"
+ENV SPRING_DATASOURCE_URL=jdbc:hsqldb:hsql:/db/test \
+SPRING_DATASOURCE_USERNAME=sa \
+SPRING_DATASOURCE_PASSWORD=password
 
 # Working directory au sein de l'image
 WORKDIR /app
@@ -21,10 +21,6 @@ RUN ./mvnw dependency:go-offline -B
 
 # Copie du projet
 COPY src src
-
-# Package de l'application
-RUN ./mvnw package -DskipTests && \
-    mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 # Lancement du serveur springboot
 CMD ./mvnw spring-boot:run

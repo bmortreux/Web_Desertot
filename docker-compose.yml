@@ -7,9 +7,7 @@ services:
       context: ./front
       dockerfile: Dockerfile
     ports:
-      - "4200:4200" # Port mapping
-    networks:
-      - back
+      - 4200:4200
 
   spring:
     build:
@@ -18,30 +16,15 @@ services:
     ports:
       - 8082:8082
       - 8001:8001
-    restart: "no"
     depends_on:
       - db
-    networks:
-      - back
 
   db:
-    image: mitchtalmadge/hsqldb
-    environment:
-      - HSQLDB_TRACE=true
-      - HSQLDB_SILENT=false
-      - HSQLDB_USER=sa
-      - HSQLDB_PASSWORD=password
-      - HSQLDB_DATABASE_HOST=localhost
-      - HSQLDB_DATABASE_ALIAS=test
+    build:
+      context: ./dockerfile/hsqldb
+      dockerfile: Dockerfile
     ports:
       - 9001:9001
-    volumes:
-      - /opt/database
-    networks:
-      - back
-
-networks:
-  back:
 
 volumes:
   db-data:
